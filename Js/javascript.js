@@ -4,8 +4,8 @@ $(document).ready(function() {
 var player1 = 0;
 var player2 = 0;
 
-var trackLength = prompt("How long would you like the track to be? (Select a length between 20 and 60");
-  console.log(trackLength);
+var trackLength = prompt('How long would you like the track to be? (Select a length between 20 and 60');
+console.log(trackLength);
 
 
 /*---------------------------------------------------------*/
