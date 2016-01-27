@@ -1,19 +1,30 @@
-body {
-  background-image: url("Images/wallpaper.jpg");
+body { 
+  background-image: url("../Images/wallpaper.jpg");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
 }
 
-.racer_table td {
+
+td {
   background-color: white;
-  height: 20px;
-  width: 20px;
+  border-top-color: black;
+  border-bottom-color: black;
+  border-style: solid;
+  border-color: transparent;
+  width: 60px;
+  height: 60px;
 }
 
-#player1_strip td.active {
+#player1 td.active {
   background-color: red;
+  border: 50px blue;
 }
 
-#player2_strip td.active {
+#player2 td.active {
   background-color: yellow;
+  border: 50px green;
 }
 
 h1 {
@@ -30,4 +41,5 @@ h3 {
   color: white;
   text-align: center;
 }
+
 

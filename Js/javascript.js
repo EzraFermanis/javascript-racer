@@ -1,75 +1,70 @@
 $(document).ready(function() {
 
+var player1Move = 0;
+var player2Move = 0;
 
-var player1 = 0;
-var player2 = 0;
+var rowLength = prompt('How long would you like the track to be? (Select a length between 20 and 60');
+console.log(rowlength);
 
-var trackLength = prompt('How long would you like the track to be? (Select a length between 20 and 60');
-console.log(trackLength);
-
-
-/*---------------------------------------------------------*/
+if (rowlength<20){
+  var rowlength = 20;
+}  else if (rowlength>60) {
+  var rowLength = 60;
+};
 
 
 
 var gameStart = function() {
   $("td").removeClass("active");
-  $("#player1_strip" td:first).addClass("active");
-  $("#player2_strip" td:first).addClass("active");
+  $("#player1 td:first").addClass("active");
+  $("#player2 td:first").addClass("active");
 
-var player1adv = 0;
-var player2adv = 0;
-
+var player1Move = 0;
+var player2Move = 0;
 };
 
-for (var i=0; i<=trackLength; i++) {
-$(".column").append("<td>");
+for (var i=0; i<= rowLength; i++) {
+$(".row").append('<td>');
 };
+
 
 gameStart();
 
-/*---------------------------------------------------------*/
 
-$(document).on('keyup', function(keypress) {
+$(document).on('keyup', function(keyPress) {
 
-if(keyPress.keyCode === 80) {
+if (keyPress.keyCode === 80) {
 
-  if (player1adv < trackLength -1) {
-  updatePlayerPosition("player1_strip");
-  player1adv++;
-  }
-
-  else {
-    theWinner("Player 1");
+  if (player1Move < rowLength -1) {
+  updatePlayerPosition("player1");
+  player1Move++;
+  } else {
+    theWinner("player1");
   };
+    } else if (keyPress.keyCode === 81) {
 
-  
-  } else if (keyPress.keyCode === 81) {
-
-    if (player2adv < trackLength -1) {
-     updatePlayerPosition(player2_strip);
-      player2adv++;
+    if (player2Move < rowLength -1) {
+     updatePlayerPosition("player2");
+      player2Move++;
     }
    else {
-    theWinner("Player 2");
+    theWinner("player2");
+    };
   };
-};
 });
 
-/*---------------------------------------------------------*/
 
 
 var updatePlayerPosition = function(player) {
-var tdactive = $("#" + player + " td.active");
-var tdmove = tdactive.next();
+var activeTD = $("#" + player + " td.active");
+var moveTD = activeTD.next();
 
-tdactive.removeClass("active");
-tdmove.addClass("active");s
+activeTD.removeClass("active");
+moveTD.addClass("active");
 };
 
-/*---------------------------------------------------------*/
 
-var Winner = function(theWinner) {
+var theWinner = function(winner) {
 window.alert (theWinner + " has won the race!! Well done. To play again, just click ok.")
 gameStart();
 };
