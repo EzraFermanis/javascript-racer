@@ -3,13 +3,13 @@ $(document).ready(function() {
 var player1Move = 0;
 var player2Move = 0;
 
-var rowLength = prompt('How long would you like the track to be? (Select a length between 20 and 60');
+var rowLength = prompt('How long would you like the track to be? (Select a length between 5 and 20');
 console.log(rowlength);
 
-if (rowlength<20){
-  var rowlength = 20;
-}  else if (rowlength>60) {
-  var rowLength = 60;
+if (rowlength<5){
+  var rowlength = 5;
+}  else if (rowlength>20) {
+  var rowLength = 20;
 };
 
 
@@ -31,9 +31,13 @@ $(".row").append('<td>');
 gameStart();
 
 
+
 $(document).on('keyup', function(keyPress) {
 
 if (keyPress.keyCode === 80) {
+
+  document.getElementById("mp4_src").src = "../Images/rev.wav" = true;
+
 
   if (player1Move < rowLength -1) {
   updatePlayerPosition("player1");
@@ -65,7 +69,7 @@ moveTD.addClass("active");
 
 
 var theWinner = function(winner) {
-window.alert (theWinner + " has won the race!! Well done. To play again, just click ok.")
+window.alert(theWinner + " has won the race!! Well done. To play again, just click ok.")
 gameStart();
 };
 

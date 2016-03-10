@@ -1,3 +1,7 @@
+div {
+    border: 1px solid white;
+}
+
 body { 
   background-image: url("../Images/wallpaper.jpg");
   position: absolute;
@@ -13,18 +17,20 @@ td {
   border-bottom-color: black;
   border-style: solid;
   border-color: transparent;
-  width: 60px;
-  height: 60px;
+  width: 130px;
+  height: 100px;
 }
 
 #player1 td.active {
-  background-color: red;
-  border: 50px blue;
+background-image:url("../Images/cop.png");
+background-position: top left, top center, top right;
+background-repeat: no-repeat;
 }
 
 #player2 td.active {
-  background-color: yellow;
-  border: 50px green;
+background-image:url("../Images/robber.jpg");
+background-position: top left, top center, top right;
+background-repeat: no-repeat;
 }
 
 h1 {
