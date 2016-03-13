@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+//The below adds audio to the page by 
+
+var vid = document.getElementById("rev");
+function enableAutoplay() { 
+    vid.autoplay = true;
+    vid.load();
+}
+
 var player1Move = 0;
 var player2Move = 0;
 
@@ -36,7 +44,7 @@ $(document).on('keyup', function(keyPress) {
 
 if (keyPress.keyCode === 80) {
 
-  document.getElementById("mp4_src").src = "../Images/rev.wav" = true;
+
 
 
   if (player1Move < rowLength -1) {
@@ -74,4 +82,5 @@ gameStart();
 };
 
 });
+
 
